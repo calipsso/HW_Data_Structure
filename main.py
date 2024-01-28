@@ -5,23 +5,28 @@ class Queue:
         if (len(self.prvky)) == 0:
             return "Prazdny"
         else:
-            return "Nieje prazdny zvol volbu 4 pre podrobny vypis"
+            return "Nieje prazdny, zvol volbu 4 pre podrobny vypis"
     def pridaj_prvok(self):
         prvok = input()
         self.prvky.append(prvok)
         return f"pridal si {prvok}"
     def odober_prvok(self):
         prvok = input()
-        self.prvky.remove(prvok) # pop ak chcem cislo
+        self.prvky.remove(prvok) # pop ak chcem podla pozicie
         return f"odobral si {prvok}"
     def vypis_prvkov(self):
         return self.prvky
         #for prvok in self.prvky:
             #return prvok
-
-class Menu:
-    @staticmethod
-    def Vyber_z_menu():
+#class Menu:
+    #@staticmethod
+    #def Vyber_z_menu():
+        #print("Vyber z menu:")
+        #print("1. Zisti stav zoznamu")
+        #print("2. Pridaj prvok")
+        #print("3. Odober prvok")
+        #print("4. Vypis prvkov")
+def Vyber_z_menu():
         print("Vyber z menu:")
         print("1. Zisti stav zoznamu")
         print("2. Pridaj prvok")
@@ -29,10 +34,9 @@ class Menu:
         print("4. Vypis prvkov")
 
 queue = Queue()
-#queue.vypis_prvkov()
-
 while True:
-    Menu.Vyber_z_menu()
+    #Menu.Vyber_z_menu()
+    Vyber_z_menu()
     while True:
         try:
             vyber = int(input("zadaj volbu: "))
@@ -47,15 +51,3 @@ while True:
         print(queue.odober_prvok())
     if vyber == 4:
         print(queue.vypis_prvkov())
-
-
-
-
-
-
-
-queue = Queue()
-print(queue.pridaj_prvok("Tester"))
-queue.prazdny()
-queue.odober_prvok("kamil")
-queue.vypis_prvkov()
