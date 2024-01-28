@@ -3,19 +3,19 @@ class Queue:
         self.prvky = ["kamil", "peter"]
     def prazdny(self):
         if (len(self.prvky)) == 0:
-            return "Prazdny"
+            return "Zoznam je prazdny"
         else:
-            return "Nieje prazdny, zvol volbu 4 pre podrobny vypis"
+            return f"Zoznam nieje prazdny, zvol volbu 4 pre podrobny vypis"
     def pridaj_prvok(self):
-        prvok = input()
+        prvok = input("Zadaj prvok ktory chces pridat:")
         self.prvky.append(prvok)
-        return f"pridal si {prvok}"
+        return f"pridal si prvok: {prvok}"
     def odober_prvok(self):
-        prvok = input()
+        prvok = input("Zadaj nazov prvku ktory chces zmazat, nevies? pouzi volbu 4, inak zadaj prvok: ")
         self.prvky.remove(prvok) # pop ak chcem podla pozicie
         return f"odobral si {prvok}"
     def vypis_prvkov(self):
-        return self.prvky
+        return f"{self.prvky}"
         #for prvok in self.prvky:
             #return prvok
 #class Menu:
